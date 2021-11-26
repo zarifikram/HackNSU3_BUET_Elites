@@ -10,4 +10,5 @@ class Person{
   static String phone = "adfas";
   static String city = "Bronx";
   static String doctorId = "hehe";
+  static bool isQuestionDone = false;
 }
