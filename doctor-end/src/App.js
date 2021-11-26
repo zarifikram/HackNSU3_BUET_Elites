@@ -12,10 +12,12 @@ function App() {
       
       <BrowserRouter>
           <Routes>
-              <Route path="/" exact component={Home}></Route>
-              <Route path="/Patients" exact component={Patients}></Route>
-              <Route path="/Auth" exact component={Auth}></Route>
-              <Route path="/Critical" exact component={Critical}></Route>
+              <Route path="/" exact element={<Home/>}>
+                
+              </Route>
+              <Route path="/Patients" exact element={<Patients/>}></Route>
+              <Route path="/Auth" exact element={<Auth/>}></Route>
+              <Route path="/Critical" exact element={<Critical/>}></Route>
           </Routes>
       </BrowserRouter>
     </div>
