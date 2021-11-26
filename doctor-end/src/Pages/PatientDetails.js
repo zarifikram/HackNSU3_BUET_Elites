@@ -129,8 +129,8 @@ export default function Home({match}) {
                     }}>Toggle Critical</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Call Patient?")}><Typography variant="h6" fontFamily="Bree Serif">Call Patient</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Set Appointment?")}><Typography variant="h6" fontFamily="Bree Serif">Set Appointment</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>alert("Create Test?")}>Create Test</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>alert("Set physical visit?")}>Set Physical Visit</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Create Test?")}><Typography variant="h6" fontFamily="Bree Serif" >Create Test</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Set physical visit?")}><Typography variant="h6" fontFamily="Bree Serif" >Set Physical Visit</Typography></Button>
                 </Box>
               </TabPanel>
             </TabContext>
