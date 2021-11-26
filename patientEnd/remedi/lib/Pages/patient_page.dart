@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
+import 'package:flutter/material.dart';
+import "package:velocity_x/velocity_x.dart";
 import '../api_caller.dart';
 
 class PatientPage extends StatefulWidget{
@@ -21,6 +22,35 @@ class _PatientPageState extends State<PatientPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    print(isOpens[0]);
+    return SafeArea(
+      child: Scaffold(
+        body: Align(
+          alignment: AlignmentDirectional.topStart,
+          child: Column(
+            children: [
+              getFutureElements(context),
+            ],
+          ),
+        ),
+      ),
+    );
   }
+
+  Widget getFutureElements(BuildContext context) => FutureBuilder(
+    builder: (context, snapshot){
+      switch (snapshot.connectionState){
+        case ConnectionState.none:
+        case ConnectionState.waiting:
+        case ConnectionState.active:
+          return CircularProgressIndicator().centered();
+
+        case ConnectionState.done:
+          if(snapshot.hasError) return "Error".text.xl.make();
+          else if(snapshot.hasData) return "data".text.make(); //need to change
+          else return CircularProgressIndicator().centered();
+      }
+    },
+    future: ResponseAPICall,//ResponseAPICall,
+  );
 }
