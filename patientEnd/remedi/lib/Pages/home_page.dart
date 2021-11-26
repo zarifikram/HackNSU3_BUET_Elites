@@ -16,8 +16,8 @@ class HomePage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
             "Welcome to ReMedi".text.xl4.bold.makeCentered(),
-            "Where Telemedecine is reimagined".text.center.xl4.bold.makeCentered(),
-            "Tell us exactly how you feel. And rest will be taken care by us.".text.xl2.center.makeCentered().p16(),
+            "Where telemedicine is reimagined".text.center.xl2.makeCentered(),
+            Image.network("https://i.postimg.cc/6qRmyFKT/landing-Pic.png", scale: .8),
             MaterialButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               child: "Get Started".text.color(context.cardColor).xl4.make().px64().py16(),
