@@ -43,18 +43,13 @@ export default function Home({match}) {
         age:"21",
         height:"1.8",
         weight:"65",
+        sex:"male",
         emergency:true,
         address:"#452",
         street:"12",
         phone:"01293492034",
         city:"Dhaka",
         doctor:"Aslam",
-        tests:[{
-            name:"Blood O2",
-            value:"140",
-            unit:"mm",
-            time:"25 Nov, 2021"
-        }]
     })
     const [tests,setTests]=useState([{
         name:"Blood O2",
@@ -63,31 +58,17 @@ export default function Home({match}) {
         time:"14:02",
         date:"25 Nov, 2021"
     }])
-    // const getPatientData=()=>{
-    //   fetch(`http://151.106.113.197/get-patient?key=${patientKey}`).then(res=>res.json()).then(data=>{
-    //     setPatientData(data)
-    //     setTests(Object.keys(data.tests))
-    //     // let testNames=Object.keys(data.tests)
-    //     // testNames.forEach(a=>{
-    //     //   setTests(prev=>[...prev,patientData.tests.name])
-    //     // })
-    //     setLoading(false)
-    //   })
-    // }
-    // React.useEffect(()=>{
-    //   getPatientData()
-    // },[])
     return (
         <Box > 
             {!loading && <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw", minHeight:"100vh",backgroundColor:"#f4f4f4",marginTop:{md:"7vh"}}}>
             <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:"2rem"}}>
                 <Avatar alt="Aslam Miah"  sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#ff80ab"}}/>
-                <Typography variant="h5">{patientData.name}</Typography>
-                <Typography variant="p" color="#8f8f8f">{patientData.address}</Typography>
-                <Typography variant="h5"></Typography>
+                <Typography variant="h5" fontFamily="Bree Serif">{patientData.name}</Typography>
+                <Typography variant="p" color="#8f8f8f" fontFamily="Bree Serif">{patientData.address}</Typography>
+                <Typography variant="h5" fontFamily="Bree Serif"></Typography>
             </Box> 
             <Box sx={{width:"80vw",height:"20vh",border:"1px solid #ff4081",borderRadius:"1rem",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
-              <Typography variant="h3" color="primary">Dermaitis</Typography>
+              <Typography variant="h3" color="primary" fontFamily="Bree Serif">Dermaitis</Typography>
               <Typography variant="p" fontFamily="Bree Serif">Started Treatment : 25 Mar 2018</Typography>
             </Box>
             <Box sx={{ width: {xs:"90vw",md:"80vw"}, typography: 'body1' }}>
@@ -101,11 +82,11 @@ export default function Home({match}) {
               </Box>
               <TabPanel value="1">
                 <Box sx={{display:"flex",flexDirection:"column"}}>
-                    <Typography variant="p">Age : {patientData.age}yrs</Typography>
-                    <Typography variant="p">Height : {patientData.height}m</Typography>
-                    <Typography variant="p">Weight : {patientData.weight}</Typography>
-                    <Typography variant="p">Gender : {patientData.sex}</Typography>
-                    <Typography variant="p">Address : {patientData.address}</Typography>
+                    <Typography variant="p" fontFamily="Bree Serif">Age : {patientData.age}yrs</Typography>
+                    <Typography variant="p" fontFamily="Bree Serif">Height : {patientData.height}m</Typography>
+                    <Typography variant="p" fontFamily="Bree Serif">Weight : {patientData.weight}</Typography>
+                    <Typography variant="p" fontFamily="Bree Serif">Gender : {patientData.sex}</Typography>
+                    <Typography variant="p" fontFamily="Bree Serif">Address : {patientData.address}</Typography>
                     
                 </Box>
               </TabPanel>
@@ -117,7 +98,7 @@ export default function Home({match}) {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>{item.name}</Typography>
+                  <Typography fontFamily="Bree Serif">{item.name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Box sx={{display:"flex"}}>
@@ -131,9 +112,9 @@ export default function Home({match}) {
                     </TimelineSeparator>
                     <TimelineContent>
                         <Box>
-                            <Typography color="primary">{item.date}</Typography>
-                            <Typography sx={{color:"#636363"}}>{item.time}</Typography>
-                            <Typography>{item.value} {item.unit}</Typography>
+                            <Typography color="primary" fontFamily="Bree Serif">{item.date}</Typography>
+                            <Typography sx={{color:"#636363"}} fontFamily="Bree Serif">{item.time}</Typography>
+                            <Typography fontFamily="Bree Serif">{item.value} {item.unit}</Typography>
                         </Box>
                         
                     </TimelineContent>
@@ -147,11 +128,11 @@ export default function Home({match}) {
               </TabPanel>
               <TabPanel value="3">
                 <Box sx={{width:{xs:"90vw",md:"80vw"},display:"flex",flexDirection:"column",alignItems:"center"}}>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" >Toggle Critical</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Call Patient</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Set Appointment</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Create Test</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Set Physical Visit</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Toggle Critical</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Call Patient</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Set Appointment</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Create Test</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Set Physical Visit</Typography></Button>
                 </Box>
               </TabPanel>
             </TabContext>
