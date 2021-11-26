@@ -21,7 +21,8 @@ const patients={
         street:"6",
         phone:"01293492034",
         city:"Manhattan",
-        doctor:"Aslam"
+        doctor:"Aslam",
+        
     },
     "Jaid Monwar Chowdhury":{
         name:"Jaid Monwar Chowdhury",

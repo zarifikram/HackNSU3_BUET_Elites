@@ -51,7 +51,15 @@ export default function Home({match}) {
         unit:"mm",
         time:"14:02",
         date:"25 Nov, 2021"
-    }])
+    },
+    {
+      name:"RBC Count",
+      value:"140",
+        unit:"mm",
+        time:"4:02",
+        date:"2 Nov, 2021"
+    }
+  ])
     return (
         <Box > 
           <Header active={5}/>
