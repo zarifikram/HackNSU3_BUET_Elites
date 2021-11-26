@@ -16,12 +16,72 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 export default function Home({match}) {
-  
+    let patientkey;
+    //const patientKey=match.params.id
+    const [tabIndex,setTabIndex]=React.useState(1)
+    const tabChange=(event,newValue)=>{
+        setTabIndex(newValue)
+    }
+    const patients={
+        "1":{
+            name:"Salman Sayeed",
+            age:"21",
+            height:"1.8",
+            weight:"65",
+            sex:"male",
+            emergency:true,
+            address:"#452",
+            street:"12",
+            phone:"01293492034",
+            city:"Dhaka",
+            doctor:"Aslam"
+        }
+    }
+    const [loading,setLoading]=useState(false)
+    const [patientData,setPatientData]=useState({
+        name:"Salman Sayeed",
+        age:"21",
+        height:"1.8",
+        weight:"65",
+        emergency:true,
+        address:"#452",
+        street:"12",
+        phone:"01293492034",
+        city:"Dhaka",
+        doctor:"Aslam",
+        tests:[{
+            name:"Blood O2",
+            value:"140",
+            unit:"mm",
+            time:"25 Nov, 2021"
+        }]
+    })
+    const [tests,setTests]=useState([{
+        name:"Blood O2",
+        value:"140",
+        unit:"mm",
+        time:"14:02",
+        date:"25 Nov, 2021"
+    }])
+    // const getPatientData=()=>{
+    //   fetch(`http://151.106.113.197/get-patient?key=${patientKey}`).then(res=>res.json()).then(data=>{
+    //     setPatientData(data)
+    //     setTests(Object.keys(data.tests))
+    //     // let testNames=Object.keys(data.tests)
+    //     // testNames.forEach(a=>{
+    //     //   setTests(prev=>[...prev,patientData.tests.name])
+    //     // })
+    //     setLoading(false)
+    //   })
+    // }
+    // React.useEffect(()=>{
+    //   getPatientData()
+    // },[])
     return (
         <Box > 
             {!loading && <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw", minHeight:"100vh",backgroundColor:"#f4f4f4",marginTop:{md:"7vh"}}}>
             <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:"2rem"}}>
-                <Avatar alt="Aslam Miah"  src="/static/images/avatar/1.jpg" sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#ff80ab"}}/>
+                <Avatar alt="Aslam Miah"  sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#ff80ab"}}/>
                 <Typography variant="h5">{patientData.name}</Typography>
                 <Typography variant="p" color="#8f8f8f">{patientData.address}</Typography>
                 <Typography variant="h5"></Typography>
@@ -51,19 +111,19 @@ export default function Home({match}) {
               </TabPanel>
               <TabPanel value="2">
                 Tests :
-                {tests.map(testName=>(<Accordion>
+                {tests.map(item=>(<Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>{testName}</Typography>
+                  <Typography>{item.name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Box sx={{display:"flex"}}>
 
                   <Timeline position="alternate">
-                  {patientData.tests[testName].map(item=>(
+                  {tests.map(item=>(
                   <TimelineItem>
                     <TimelineSeparator>
                       <TimelineDot color="primary"/>
@@ -87,9 +147,7 @@ export default function Home({match}) {
               </TabPanel>
               <TabPanel value="3">
                 <Box sx={{width:{xs:"90vw",md:"80vw"},display:"flex",flexDirection:"column",alignItems:"center"}}>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" onClick={()=>{
-                      fetch(`http://151.106.113.197/toggle-emergency?key=${patientKey}`)
-                    }}>Toggle Critical</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" >Toggle Critical</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Call Patient</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Set Appointment</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6">Create Test</Typography></Button>
