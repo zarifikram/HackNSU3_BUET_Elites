@@ -11,4 +11,11 @@ class Person{
   static String city = "Bronx";
   static String doctorId = "hehe";
   static bool isQuestionDone = false;
+
+
+  static bool isFirstQuestionDone = false;
+  static bool isContinue = false;
+  static String choice = "asf";
+  static String choiceLabel = "dfaf";
+  static String specialization = "psychiatry";
 }

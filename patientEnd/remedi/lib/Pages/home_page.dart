@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            "Welcome to Remedi".text.xl4.bold.makeCentered(),
+            "Welcome to ReMedi".text.xl4.bold.makeCentered(),
             "Where Telemedecine is reimagined".text.center.xl4.bold.makeCentered(),
             "Tell us exactly how you feel. And rest will be taken care by us.".text.xl2.center.makeCentered().p16(),
             MaterialButton(
