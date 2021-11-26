@@ -88,15 +88,13 @@ class _ChatPageState extends State<ChatPage> {
     },
     future: ResponseAPICall,//ResponseAPICall,
   );
-
-
-
+  
   Widget ProceedButton(BuildContext context) => MaterialButton(
     color: context.cardColor.withOpacity(0.3),
     textColor: context.cardColor,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     onPressed: (){
-
+      (Navigator.push(context, MaterialPageRoute(builder: (context)=>PatientPage())));
     },
     child: ("Proceed").text.bold.center.xl3.make().box.width(context.percentWidth*70).make().py8(),
   ).box.rounded.make().py32();
