@@ -9,10 +9,23 @@ const patient={
     emergency:true
 }
 
-const getData=()=>{
-    //http://151.106.113.197/
-    fetch("http://151.106.113.197/")
-}
+//      const [patients,setPatients]=React.useState([])
+  
+    // const getPatients=()=>{
+        
+    //     fetch(`http://151.106.113.197/get-patient-data?key=${docKey}`).then(res=>res.json()).then(data=>{
+    //         console.log(data)
+    //         data.forEach(a=>{
+    //             setPatients(prev=>[...prev,a])
+    //         })
+    //         setLoading(false)
+    //     })
+    // }
+    // React.useEffect(()=>{
+    //     getPatients()
+    // },[])
+
+    
 export default function Patients() {
     return (
         <Box sx={{width:"100vw",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"flex-start"}}>
