@@ -88,7 +88,7 @@ class _ChatPageState extends State<ChatPage> {
     },
     future: ResponseAPICall,//ResponseAPICall,
   );
-  
+
   Widget ProceedButton(BuildContext context) => MaterialButton(
     color: context.cardColor.withOpacity(0.3),
     textColor: context.cardColor,
