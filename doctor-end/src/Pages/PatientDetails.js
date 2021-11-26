@@ -50,12 +50,6 @@ export default function Home({match}) {
         phone:"01293492034",
         city:"Dhaka",
         doctor:"Aslam",
-        tests:[{
-            name:"Blood O2",
-            value:"140",
-            unit:"mm",
-            time:"25 Nov, 2021"
-        }]
     })
     const [tests,setTests]=useState([{
         name:"Blood O2",
@@ -64,20 +58,6 @@ export default function Home({match}) {
         time:"14:02",
         date:"25 Nov, 2021"
     }])
-    // const getPatientData=()=>{
-    //   fetch(`http://151.106.113.197/get-patient?key=${patientKey}`).then(res=>res.json()).then(data=>{
-    //     setPatientData(data)
-    //     setTests(Object.keys(data.tests))
-    //     // let testNames=Object.keys(data.tests)
-    //     // testNames.forEach(a=>{
-    //     //   setTests(prev=>[...prev,patientData.tests.name])
-    //     // })
-    //     setLoading(false)
-    //   })
-    // }
-    // React.useEffect(()=>{
-    //   getPatientData()
-    // },[])
     return (
         <Box > 
             {!loading && <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw", minHeight:"100vh",backgroundColor:"#f4f4f4",marginTop:{md:"7vh"}}}>
