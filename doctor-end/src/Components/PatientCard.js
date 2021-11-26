@@ -26,7 +26,7 @@ export default function PatientCard(props) {
             </Box>
     
             <Button variant="contained" sx={{margin:"3vh 0"}}>
-                <Typography fontFamily="Bree Serif" variant="h6" onClick={()=>{navigate(`/patients/${props.data.key}`)}}>Track Patient</Typography>
+                <Typography fontFamily="Bree Serif" variant="h6" onClick={()=>{navigate(`/patients/${props.data.name}`)}}>Track Patient</Typography>
             </Button>
         </Paper>
     )

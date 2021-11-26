@@ -1,6 +1,7 @@
 import React from 'react'
 import {Box,Typography} from '@mui/material'
 import PatientCard from '../Components/PatientCard'
+import {patients} from '../Patients'
 const patient={
     name:"Salman Sayeed",
     age:"21",
@@ -8,7 +9,11 @@ const patient={
     weight:"65",
     emergency:true
 }
+
+
 export default function Patients() {
+    let keys=Object.keys(patients)
+    console.log(keys)
     return (
         <Box sx={{width:"100vw",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"flex-start"}}>
             <Box sx={{backgroundColor:"#2196f3",width:"100vw",minHeight:"40vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginTop:{xs:"10vh"}}}>
@@ -17,15 +22,9 @@ export default function Patients() {
             </Box>
             <Box sx={{width:"80vw",marginTop:"-10vh",minHeight:"100vh",display:"flex", alignItems:"flex-start", justifyContent:"center", flexWrap:"wrap"}}>
                 <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
-                <PatientCard data={patient}/>
+                {keys.map(item=>(
+                    <PatientCard data={patients[item]}/>
+                ))}
             </Box>
         </Box>
     )

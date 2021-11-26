@@ -15,42 +15,35 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+
+import { patients } from '../Patients';
+
 export default function Home({match}) {
-    let patientkey;
+    let params=useParams()
+    match=params.id
+    console.log(params.id)
     //const patientKey=match.params.id
     const [tabIndex,setTabIndex]=React.useState(1)
     const tabChange=(event,newValue)=>{
         setTabIndex(newValue)
     }
-    const patients={
-        "1":{
-            name:"Salman Sayeed",
-            age:"21",
-            height:"1.8",
-            weight:"65",
-            sex:"male",
-            emergency:true,
-            address:"#452",
-            street:"12",
-            phone:"01293492034",
-            city:"Dhaka",
-            doctor:"Aslam"
-        }
-    }
+    // const patients={
+    //     "1":{
+    //         name:"Salman Sayeed",
+    //         age:"21",
+    //         height:"1.8",
+    //         weight:"65",
+    //         sex:"male",
+    //         emergency:true,
+    //         address:"#452",
+    //         street:"12",
+    //         phone:"01293492034",
+    //         city:"Dhaka",
+    //         doctor:"Aslam"
+    //     }
+    // }
     const [loading,setLoading]=useState(false)
-    const [patientData,setPatientData]=useState({
-        name:"Salman Sayeed",
-        age:"21",
-        height:"1.8",
-        weight:"65",
-        sex:"male",
-        emergency:true,
-        address:"#452",
-        street:"12",
-        phone:"01293492034",
-        city:"Dhaka",
-        doctor:"Aslam",
-    })
+    const [patientData,setPatientData]=useState(patients[match])
     const [tests,setTests]=useState([{
         name:"Blood O2",
         value:"140",
@@ -62,12 +55,12 @@ export default function Home({match}) {
         <Box > 
             {!loading && <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw", minHeight:"100vh",backgroundColor:"#f4f4f4",marginTop:{md:"7vh"}}}>
             <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:"2rem"}}>
-                <Avatar alt="Aslam Miah"  sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#ff80ab"}}/>
+                <Avatar alt="Aslam Miah"  sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#2196f3"}}/>
                 <Typography variant="h5" fontFamily="Bree Serif">{patientData.name}</Typography>
                 <Typography variant="p" color="#8f8f8f" fontFamily="Bree Serif">{patientData.address}</Typography>
                 <Typography variant="h5" fontFamily="Bree Serif"></Typography>
             </Box> 
-            <Box sx={{width:"80vw",height:"20vh",border:"1px solid #ff4081",borderRadius:"1rem",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+            <Box sx={{width:"80vw",height:"20vh",border:"1px solid #2196f3",borderRadius:"1rem",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
               <Typography variant="h3" color="primary" fontFamily="Bree Serif">Dermaitis</Typography>
               <Typography variant="p" fontFamily="Bree Serif">Started Treatment : 25 Mar 2018</Typography>
             </Box>
@@ -128,7 +121,9 @@ export default function Home({match}) {
               </TabPanel>
               <TabPanel value="3">
                 <Box sx={{width:{xs:"90vw",md:"80vw"},display:"flex",flexDirection:"column",alignItems:"center"}}>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Toggle Critical</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>{
+                      patients[match].emergency==true? patients[match].emergency=false : patients[match].emergency=true 
+                    }}>Toggle Critical</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Call Patient</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Set Appointment</Typography></Button>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Create Test</Typography></Button>
