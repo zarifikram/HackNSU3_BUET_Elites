@@ -54,10 +54,17 @@ export default function Home({match}) {
     },
     {
       name:"RBC Count",
-      value:"140",
-        unit:"mm",
-        time:"4:02",
-        date:"2 Nov, 2021"
+      value:"4.56",
+      unit:"million cells/mcL",
+      time:"9:02",
+      date:" Nov, 2021"
+    },
+    {
+      name:"WBC Count",
+      value:"1.56",
+      unit:"million cells/mcL",
+      time:"10:02",
+      date:"2 Nov, 2021"
     }
   ])
     return (

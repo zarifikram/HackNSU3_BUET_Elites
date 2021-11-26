@@ -35,7 +35,45 @@ const patients={
         phone:"01293492034",
         city:"Manhattan",
         doctor:"Aslam"
-    }
+    },
+    "Jane Doe":{
+        name:"Jane Doe",
+        age:"35",
+        height:"1.5",
+        weight:"65",
+        emergency:false,
+        address:"Street 5 , NYC",
+        street:"12",
+        phone:"01293492034",
+        city:"Manhattan",
+        doctor:"Aslam"
+    },
+    "Abdul Kalam":{
+        name:"Abdul Kalam",
+        age:"81",
+        height:"1.6",
+        weight:"65",
+        emergency:true,
+        address:"Street 7 , NYC",
+        street:"12",
+        phone:"01293492034",
+        city:"Manhattan",
+        doctor:"Aslam"
+    },
+    
+    "Janice Bing":{
+        name:"Janice Bing",
+        age:"39",
+        height:"1.2",
+        weight:"65",
+        emergency:false,
+        address:"Street 5 , NYC",
+        street:"12",
+        phone:"01293492034",
+        city:"Manhattan",
+        doctor:"Aslam"
+    },
+    
 }
 
 export {patients}
