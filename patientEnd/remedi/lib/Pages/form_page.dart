@@ -22,8 +22,14 @@ class FormPage extends StatelessWidget{
                 Container().box.make().py16(),
                 "First tell us a bit about yourself.".text.xl2.bold.make().py16(),
                 //custom input and dropdown needed
-                CustomTextField(inputHint: "e.g zarif" ,label: "Name",).py16(),
+                CustomTextField(inputHint: "e.g Zarif Ikram" ,label: "Name",).py16(),
                 CustomDropItem(items: ages, inputHint: "e.g 10", label: "Age",).py16(),
+                CustomDropItem(items: ["Male", "Female"], inputHint: "e.g male", label: "Gender",).py16(),
+                CustomTextField(label: "Height", inputHint: "e.g 1.56",).py16(),
+                CustomTextField(label: "Weight", inputHint: "e.g 78",).py16(),
+                CustomTextField(label: "Street", inputHint: "e.g Dhanmondi r/a",).py16(),
+                CustomDropItem(items: cities, inputHint: "e.g Bronx", label: "City",).py16(),
+                CustomTextField(label: "Phone Number", inputHint: "e.g +8806969420",).py16(),
 
                 MaterialButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
