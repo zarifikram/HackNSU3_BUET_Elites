@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remedi/Widgets/custom_drop_item.dart';
 import 'package:remedi/Widgets/custom_text_field.dart';
 import "package:velocity_x/velocity_x.dart";
 
@@ -21,7 +22,9 @@ class FormPage extends StatelessWidget{
                 Container().box.make().py16(),
                 "First tell us a bit about yourself.".text.xl2.bold.make().py16(),
                 //custom input and dropdown needed
-                CustomTextField(inputHint: "e.g zarif" ,label: "Name",),
+                CustomTextField(inputHint: "e.g zarif" ,label: "Name",).py16(),
+                CustomDropItem(items: ages, inputHint: "e.g 10", label: "Age",).py16(),
+
                 MaterialButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                   onPressed: () => (Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()))),
