@@ -140,7 +140,17 @@ class _PatientPageState extends State<PatientPage> {
     child: text.text.bold.center.xl4.bold.make().box.width(context.percentWidth*50).make().py24(),
   ).box.rounded.makeCentered().py32();
 
-  Widget AppointButton(BuildContext context, String id) => Container();
+  Widget AppointButton(BuildContext context, String id) =>  MaterialButton(
+    color: context.cardColor,
+    textColor: context.accentColor,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    onPressed: (){
+      Person.doctorId = id;
+      ResponseAPICall2 = API_CALLER.APPOINT();
+      setState(() {});
+    },
+    child: Person.doctorId == "hehe" ? "Appoint".text.bold.center.xl4.bold.make().box.width(context.percentWidth*50).make().py24() : getAppointment(context),
+  ).box.rounded.makeCentered().py32();
 
 
   Widget getAppointment(BuildContext context) => FutureBuilder(
