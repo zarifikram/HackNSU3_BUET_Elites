@@ -11,10 +11,9 @@ function App() {
     <div className="App">
       
       <BrowserRouter>
+        <Header/>
           <Routes>
-              <Route path="/" exact element={<Home/>}>
-                
-              </Route>
+              <Route path="/" exact element={<Home/>}></Route>
               <Route path="/Patients" exact element={<Patients/>}></Route>
               <Route path="/Auth" exact element={<Auth/>}></Route>
               <Route path="/Critical" exact element={<Critical/>}></Route>
