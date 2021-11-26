@@ -132,10 +132,27 @@ class _PatientPageState extends State<PatientPage> {
     ).expand();
   }
 
-  Widget ProceedButton(BuildContext context, String text, Null Function() param2) => Container();
+  Widget ProceedButton(BuildContext context, String text, Null Function() param2) => MaterialButton(
+
+  );
 
   Widget AppointButton(BuildContext context, String id) => Container();
 
 
+  Widget getAppointment(BuildContext context) => FutureBuilder(
+    builder: (context, snapshot){
+      switch (snapshot.connectionState){
+        case ConnectionState.none:
+        case ConnectionState.waiting:
+        case ConnectionState.active:
+          return CircularProgressIndicator().centered();
 
+        case ConnectionState.done:
+          if(snapshot.hasError) return "Error".text.xl.make();
+          else if(snapshot.hasData) return "Appointment Confirmed".text.bold.center.xl4.bold.make().box.width(context.percentWidth*50).make().py24();
+          else return CircularProgressIndicator().centered();
+      }
+    },
+    future: ResponseAPICall,//ResponseAPICall,
+  );
 }
