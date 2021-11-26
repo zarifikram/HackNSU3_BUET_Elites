@@ -1,2 +1,0 @@
-# Remedi
- Telemedicine Reimagined
