@@ -30,26 +30,26 @@ export default function Header() {
         <AppBar color="default" position="fixed" sx={{ top: {xs:'auto',md:0}, bottom: {xs:0,md:"auto" }}}>
             <Toolbar sx={{display:"flex",alignItems:"center",justifyContent:"space-around"}}>
                 <Box sx={{display:{xs:"none",md:"flex"},flex:".8"}}>
-                    <Typography color="primary" variant="h4">Remedi</Typography>
+                    <Typography fontFamily="Bree Serif" color="primary" variant="h4">Remedi</Typography>
                 </Box>
                 <Button onClick={HomeClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
                     {active==0 ? <HomeIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <HomeIcon sx={{display:{xs:"flex",md:"none"}}}/>}
-                    {active==0 ? <Typography color="primary">Home</Typography> : <Typography>Home</Typography>}
+                    {active==0 ? <Typography fontFamily="Bree Serif" color="primary">Home</Typography> : <Typography fontFamily="Bree Serif">Home</Typography>}
                
                 </Button>
               
                 <Button onClick={PatientsClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
                     {active==1 ? <HotelIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <HotelIcon sx={{display:{xs:"flex",md:"none"}}}/>}
-                    {active==1 ? <Typography color="primary">Patients</Typography> : <Typography>Patients</Typography>}
+                    {active==1 ? <Typography fontFamily="Bree Serif" color="primary">Patients</Typography> : <Typography fontFamily="Bree Serif">Patients</Typography>}
                 </Button>
                 <Button onClick={CriticalClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
                     {active===2 ? <WarningIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <WarningIcon sx={{display:{xs:"flex",md:"none"}}}/>}
-                    {active===2 ? <Typography color="primary">Critical</Typography> :<Typography>Critical</Typography>}
+                    {active===2 ? <Typography fontFamily="Bree Serif" color="primary">Critical</Typography> :<Typography fontFamily="Bree Serif">Critical</Typography>}
                
                 </Button>
                 <Button onClick={AccountClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
                     {active==3 ? <PersonIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <PersonIcon sx={{display:{xs:"flex",md:"none"}}}/>}
-                    {active==3 ? <Typography color="primary">Account</Typography> : <Typography>Account</Typography>}
+                    {active==3 ? <Typography fontFamily="Bree Serif" color="primary">Account</Typography> : <Typography fontFamily="Bree Serif">Account</Typography>}
                 </Button>
                 
             </Toolbar>
