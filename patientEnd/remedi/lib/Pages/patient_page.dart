@@ -48,7 +48,7 @@ class _PatientPageState extends State<PatientPage> {
 
         case ConnectionState.done:
           if(snapshot.hasError) return "Error".text.xl.make();
-          else if(snapshot.hasData) return "data".text.make(); //need to change
+          else if(snapshot.hasData) return GetDataColumn(context, snapshot);//need to change
           else return CircularProgressIndicator().centered();
       }
     },
@@ -133,8 +133,12 @@ class _PatientPageState extends State<PatientPage> {
   }
 
   Widget ProceedButton(BuildContext context, String text, Null Function() param2) => MaterialButton(
-
-  );
+    color: context.cardColor,
+    textColor: context.accentColor,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    onPressed: param2,
+    child: text.text.bold.center.xl4.bold.make().box.width(context.percentWidth*50).make().py24(),
+  ).box.rounded.makeCentered().py32();
 
   Widget AppointButton(BuildContext context, String id) => Container();
 
