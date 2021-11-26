@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import "package:velocity_x/velocity_x.dart";
 
+import '../person.dart';
+import 'chat_page.dart';
+import 'form_page.dart';
+
 class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class HomePage extends StatelessWidget{
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               child: "Get Started".text.color(context.cardColor).xl4.make().px64().py16(),
               color: context.cardColor.withOpacity(.3),
-              onPressed: () {  },
+              onPressed: () => (Navigator.push(context, MaterialPageRoute(builder: (context)=>Person.isQuestionDone? ChatPage() : FormPage()))),
             ).py32(),
           ],
         ),
