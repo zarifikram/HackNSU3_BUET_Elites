@@ -1,37 +1,36 @@
-import React from 'react'
-/*
+
 import React,{useState} from 'react'
-import {useHistory} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import {Box,Typography,AppBar,Toolbar,Button} from "@mui/material"
 import HomeIcon from '@mui/icons-material/Home';
 import HotelIcon from '@mui/icons-material/Hotel';
 import WarningIcon from '@mui/icons-material/Warning';
 import PersonIcon from '@mui/icons-material/Person';
 
-export default function Appbar() {
+export default function Header() {
     const [active,setActive]=useState(0)
-    const history=useHistory()
+    const navigate=useNavigate()
     const HomeClick=()=>{
         setActive(0)
-        history.push("/")
+        navigate("/")
     }
     const PatientsClick=()=>{
         setActive(1)
-        history.push("/patients")
+        navigate("/patients")
     }
     const CriticalClick=()=>{
         setActive(2)
-        history.push("/critical")
+        navigate("/critical")
     }
     const AccountClick=()=>{
         setActive(3)
-        history.push("/account")
+        navigate("/auth")
     }
     return (
         <AppBar color="default" position="fixed" sx={{ top: {xs:'auto',md:0}, bottom: {xs:0,md:"auto" }}}>
             <Toolbar sx={{display:"flex",alignItems:"center",justifyContent:"space-around"}}>
                 <Box sx={{display:{xs:"none",md:"flex"},flex:".8"}}>
-                    <Typography color="primary" variant="h4">Heal-On</Typography>
+                    <Typography color="primary" variant="h4">Remedi</Typography>
                 </Box>
                 <Button onClick={HomeClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
                     {active==0 ? <HomeIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <HomeIcon sx={{display:{xs:"flex",md:"none"}}}/>}
@@ -57,12 +56,4 @@ export default function Appbar() {
         </AppBar>
     )
 }
- 
-/*/
-export default function Header() {
-    return (
-        <div>
-            Header
-        </div>
-    )
-}
+
