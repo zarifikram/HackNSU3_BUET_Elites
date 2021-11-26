@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useParams } from 'react-router-dom';
 import {Box,Typography,Avatar,Toolbar,IconButton,Button,Chip,CircularProgress} from "@mui/material"
+import Header from '../Components/Header'
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -53,6 +54,7 @@ export default function Home({match}) {
     }])
     return (
         <Box > 
+          <Header active={5}/>
             {!loading && <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",width:"100vw", minHeight:"100vh",backgroundColor:"#f4f4f4",marginTop:{md:"7vh"}}}>
             <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:"2rem"}}>
                 <Avatar alt="Aslam Miah"  sx={{width:{xs:"30vw",md:"7vw"},height:{xs:"30vw",md:"7vw"},bgcolor:"#2196f3"}}/>
@@ -123,11 +125,12 @@ export default function Home({match}) {
                 <Box sx={{width:{xs:"90vw",md:"80vw"},display:"flex",flexDirection:"column",alignItems:"center"}}>
                     <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>{
                       patients[match].emergency==true? patients[match].emergency=false : patients[match].emergency=true 
+                      alert("Critical toggled",patients[match].emergency)
                     }}>Toggle Critical</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Call Patient</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Set Appointment</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Create Test</Typography></Button>
-                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif">Set Physical Visit</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Call Patient?")}><Typography variant="h6" fontFamily="Bree Serif">Call Patient</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large" onClick={()=>alert("Set Appointment?")}><Typography variant="h6" fontFamily="Bree Serif">Set Appointment</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>alert("Create Test?")}>Create Test</Typography></Button>
+                    <Button variant="contained" fullWidth sx={{marginBottom:"1vh"}} size="large"><Typography variant="h6" fontFamily="Bree Serif" onClick={()=>alert("Set physical visit?")}>Set Physical Visit</Typography></Button>
                 </Box>
               </TabPanel>
             </TabContext>
