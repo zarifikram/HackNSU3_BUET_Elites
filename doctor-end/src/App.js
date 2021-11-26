@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       
       <BrowserRouter>
-        <Header/>
+       
           <Routes>
               <Route path="/" exact element={<Home/>}></Route>
               <Route path="/Patients" exact element={<Patients/>}></Route>

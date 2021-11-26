@@ -7,8 +7,8 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import WarningIcon from '@mui/icons-material/Warning';
 import PersonIcon from '@mui/icons-material/Person';
 
-export default function Header() {
-    const [active,setActive]=useState(0)
+export default function Header(props) {
+    const [active,setActive]=useState(props.active)
     const navigate=useNavigate()
     const HomeClick=()=>{
         setActive(0)
@@ -22,10 +22,7 @@ export default function Header() {
         setActive(2)
         navigate("/critical")
     }
-    const AccountClick=()=>{
-        setActive(3)
-        navigate("/auth")
-    }
+    
     return (
         <AppBar color="default" position="fixed" sx={{ top: {xs:'auto',md:0}, bottom: {xs:0,md:"auto" }}}>
             <Toolbar sx={{display:"flex",alignItems:"center",justifyContent:"space-around"}}>
@@ -47,11 +44,6 @@ export default function Header() {
                     {active===2 ? <Typography fontFamily="Bree Serif" color="primary">Critical</Typography> :<Typography fontFamily="Bree Serif">Critical</Typography>}
                
                 </Button>
-                <Button onClick={AccountClick} color="inherit" sx={{display:"flex",flexDirection:{xs:"column",md:"row"}}}>
-                    {active==3 ? <PersonIcon color="primary" sx={{display:{xs:"flex",md:"none"}}}/> : <PersonIcon sx={{display:{xs:"flex",md:"none"}}}/>}
-                    {active==3 ? <Typography fontFamily="Bree Serif" color="primary">Account</Typography> : <Typography fontFamily="Bree Serif">Account</Typography>}
-                </Button>
-                
             </Toolbar>
         </AppBar>
     )
