@@ -13,7 +13,7 @@ export default function PatientCard(props) {
             <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",width:"18vw"}}>
                 <Box sx={{display:"flex",alignItems:"center",width:{xs:"70vw",md:"18vw"},marginTop:"3vh"}}>
                     <Avatar alt="Remy Sharp"  sx={{marginRight:"1vw"}}/>
-                    <Typography variant="h6">{props.data.name}</Typography>
+                    <Typography variant="h6" fontFamily="Bree Serif">{props.data.name}</Typography>
                 </Box>
                 <Divider variant="middle" sx={{width:{xs:"70vw",md:"18vw"},margin:"1vh 0"}}/>
             </Box>
@@ -22,11 +22,11 @@ export default function PatientCard(props) {
                 <Typography variant="p" sx={{fontFamily:"Bree Serif"}}>Age : {props.data.age}yrs</Typography>
                 <Typography variant="p" sx={{fontFamily:"Bree Serif"}}>Height : {props.data.height}m</Typography>
                 <Typography variant="p" sx={{fontFamily:"Bree Serif"}}>Weight : {props.data.weight}kg</Typography>
-                {props.data.emergency && <Chip label="Critical" color="primary" sx={{margin:"1vh 0"}}/>}
+                {props.data.emergency && <Chip label="Critical" color="primary" sx={{margin:"1vh 0",fontFamily:"Bree Serif"}}/>}
             </Box>
     
             <Button variant="contained" sx={{margin:"3vh 0"}}>
-                <Typography variant="h6" onClick={()=>{navigate(`/patients/${props.data.key}`)}}>Track Patient</Typography>
+                <Typography fontFamily="Bree Serif" variant="h6" onClick={()=>{navigate(`/patients/${props.data.key}`)}}>Track Patient</Typography>
             </Button>
         </Paper>
     )
