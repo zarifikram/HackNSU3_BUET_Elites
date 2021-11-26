@@ -10,8 +10,15 @@ class HomePage extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
-            VxBox().red600.make(),
-            VxBox().red800.make(),
+            "Welcome to Remedi".text.xl4.bold.makeCentered(),
+            "Where Telemedecine is reimagined".text.center.xl4.bold.makeCentered(),
+            "Tell us exactly how you feel. And rest will be taken care by us.".text.xl2.center.makeCentered().p16(),
+            MaterialButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              child: "Get Started".text.color(context.cardColor).xl4.make().px64().py16(),
+              color: context.cardColor.withOpacity(.3),
+              onPressed: () {  },
+            ).py32(),
           ],
         ),
       ),
